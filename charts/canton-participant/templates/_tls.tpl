@@ -75,13 +75,7 @@ Params:
   - Context - Dict - Required. Current context for the template evaluation.
 */}}
 {{- define "sequencer.url" -}}
-{{- if .Values.bootstrapHook.remoteSequencer.tls.enabled -}}
-https
-{{- else -}}
-http
-{{- end -}}
-://{{ .Values.bootstrapHook.remoteSequencer.host }}
+https://{{ .Values.bootstrapHook.remoteSequencer.host }}
 {{- with .Values.bootstrapHook.remoteSequencer.port -}}
 :{{ . }}
-{{- end -}}
 {{- end -}}
